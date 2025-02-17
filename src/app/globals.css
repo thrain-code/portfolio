@@ -21,6 +21,7 @@
 
 body {
   position: relative;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 body::before,
@@ -47,4 +48,19 @@ body::before {
 body::after {
   right: 0;
   border-left: 1px solid #4a4a4a;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242424;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #292929;
 }
