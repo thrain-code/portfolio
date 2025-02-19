@@ -6,6 +6,7 @@ export default function Home() {
     <>
     <div className="h-full">
       <Hero/>
+      
       <Footer/>
     </div>
     </>

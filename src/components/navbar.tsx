@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { Menu, X, GithubIcon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'About', path: '/about' },
@@ -36,7 +36,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full text-white border-b-1 border-b-zinc-800 z-50 backdrop-blur-sm bg-opacity-50 ">
+    <nav className="fixed top-0 left-0 w-full text-white border-b-1 border-b-zinc-800 bg-zinc-950 z-50 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
@@ -47,7 +47,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
@@ -58,17 +57,8 @@ const Navbar = () => {
                 </div>
               </Link>
             ))}
-            <a
-              href="https://github.com/arkadanifathir"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg hover:text-zinc-400 transition-colors"
-            >
-              <GithubIcon size={24} />
-            </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden p-2 rounded-lg focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
@@ -79,7 +69,6 @@ const Navbar = () => {
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -105,17 +94,6 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div variants={itemVariants}>
-                  <a
-                    href="https://github.com/arkadanifathir"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-3 py-1 text-lg rounded-lg hover:text-zinc-400 transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <GithubIcon size={24} className="inline mr-2" />
-                  </a>
-                </motion.div>
               </div>
             </motion.div>
           )}

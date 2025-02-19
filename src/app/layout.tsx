@@ -4,10 +4,9 @@ import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Choose the weights you need
+  weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat",
 });
-
 
 export default function RootLayout({
   children,
@@ -18,9 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.variable}>
         <div>
-          <Navbar/>
+          <Navbar />
         </div>
-        {children}
+        <main className="lg:pt-16 pt-16">
+          {children}
+        </main>
       </body>
     </html>
   );
