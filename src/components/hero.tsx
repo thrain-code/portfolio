@@ -26,7 +26,7 @@ const socialLinks = [
 function Hero() {
   return (
     <>
-      <section className="h-[calc(100vh-10rem)] w-full px-10 lg:px-20">
+      <section className="lg:h-[70vh] h-auto w-full px-10 lg:px-20">
         <div className="flex flex-col lg:flex-row-reverse justify-center lg:justify-between h-full items-center pt-10 lg:pt-0 bg-zinc-950 border-x-zinc-800 border-x-1">
           <div className="w-full lg:w-auto pr-4 lg:px-0 flex-col lg:justify-end">
             <div className="px-4">

@@ -14,12 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={montserrat.variable}>
+    <html lang="en" className="h-full">
+      <body className={`${montserrat.variable}`}>
         <div>
           <Navbar />
         </div>
-        <main className="lg:pt-16 pt-16">
+        <main className="pt-16 lg:pt-16"> {/* Tambahkan padding-top dan overflow */}
           {children}
         </main>
       </body>
