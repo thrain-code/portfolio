@@ -75,6 +75,11 @@ function Hero() {
 
           <div className="flex-col flex w-full lg:w-auto py-8 lg:py-0">
             <div className="border-b-1 border-b-zinc-800 w-full" />
+            <div className=" flex justify-between">
+              <p className="text-zinc-800 font-light mx-2">text-5xl px-2 font-semibold tracking-tighter text-balance</p>
+              <p className="text-zinc-800 font-light mx-2">Hero Components</p>
+            </div>
+            <div className="border-b-1 border-b-zinc-800 w-full" />
             <h1 className="lg:text-9xl text-5xl px-2 font-semibold my-1 lg:my-4 text-left tracking-tighter text-balance">
               Arkadani Fathir Fahrezi...
             </h1>
