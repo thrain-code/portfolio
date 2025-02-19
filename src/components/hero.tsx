@@ -30,10 +30,10 @@ function Hero() {
         <div className="flex flex-col lg:flex-row-reverse justify-center lg:justify-between h-full items-center pt-10 lg:pt-0 bg-zinc-950 border-x-zinc-800 border-x-1">
           <div className="w-full lg:w-auto pr-4 lg:px-0 flex-col lg:justify-end">
             <div className="px-4">
-              <p className="text-md ml-20 text-zinc-700">
+              <p className="text-sm lg:text-md ml-20 text-zinc-700">
                 bangsat i need a job
               </p>
-              <p className="text-lg text-zinc-500">unemployed person</p>
+              <p className="lg:text-lg text-sm text-zinc-500">unemployed person</p>
             </div>
             <div className="w-full lg:flex-col flex lg:w-64 lg:h-64 mx-4">
               <div className="border-4 border-zinc-900 rounded-xl">
@@ -76,8 +76,8 @@ function Hero() {
           <div className="flex-col flex w-full lg:w-auto py-8 lg:py-0">
             <div className="border-b-1 border-b-zinc-800 w-full" />
             <div className=" flex justify-between">
-              <p className="text-zinc-800 font-light mx-2">text-5xl px-2 font-semibold tracking-tighter text-balance</p>
-              <p className="text-zinc-800 font-light mx-2">Hero Components</p>
+              <p className="text-zinc-800 text-xs lg:text-lg font-light mx-2">text-5xl px-2 font-semibold tracking-tighter text-balance</p>
+              <p className="text-zinc-800 text-xs lg:text-lg font-light mx-2">Hero Components</p>
             </div>
             <div className="border-b-1 border-b-zinc-800 w-full" />
             <h1 className="lg:text-9xl text-5xl px-2 font-semibold my-1 lg:my-4 text-left tracking-tighter text-balance">
