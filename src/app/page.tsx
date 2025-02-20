@@ -1,13 +1,13 @@
 import Hero from "@/components/hero"
 import Footer from "@/components/footer"
-import Contribution from "@/components/contribution";
+import Experience from "@/components/experience";
 
 export default function Home() {
   return (
     <>
     <div className="h-full">
       <Hero/>
-      <Contribution/>
+      <Experience/>
       <Footer/>
     </div>
     </>

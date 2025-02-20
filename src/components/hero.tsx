@@ -26,7 +26,7 @@ const socialLinks = [
 function Hero() {
   return (
     <>
-      <section className="lg:h-[70vh] h-auto w-full px-10 lg:px-20">
+      <section className="lg:h-[70vh] h-auto w-full px-8 lg:px-20">
         <div className="flex flex-col lg:flex-row-reverse justify-center lg:justify-between h-full items-center pt-10 lg:pt-0 bg-zinc-950 border-x-zinc-800 border-x-1">
           <div className="w-full lg:w-auto pr-4 lg:px-0 flex-col lg:justify-end">
             <div className="px-4">
@@ -36,11 +36,11 @@ function Hero() {
               <p className="lg:text-lg text-sm text-zinc-400">unemployed person</p>
             </div>
             <div className="w-full lg:flex-col flex lg:w-64 lg:h-64 mx-4">
-              <div className="border-4 border-zinc-800 rounded-xl">
-                <div className="flex items-center space-x-1 bg-zinc-950 p-2 rounded-t-lg">
-                  <span className="h-3 w-3 bg-zinc-800 rounded-full"></span>
-                  <span className="h-3 w-3 bg-zinc-800 rounded-full"></span>
-                  <span className="h-3 w-3 bg-zinc-800 rounded-full"></span>
+              <div className=" bg-zinc-900 rounded-xl">
+                <div className="flex items-center space-x-1 p-2 rounded-t-lg">
+                  <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
+                  <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
+                  <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
                 </div>
                 <Image
                   src={profileImage}
@@ -73,14 +73,14 @@ function Hero() {
 
           <div className="h-px lg:h-full bg-zinc-800 w-full lg:w-px my-4 lg:my-0 hidden lg:block" />
 
-          <div className="flex-col flex w-full lg:w-auto py-8 lg:py-0">
+          <div className="flex-col flex w-full lg:w-auto py-3 lg:py-0">
             <div className="border-b-1 border-b-zinc-800 w-full" />
             <div className=" flex justify-between">
               <p className="text-zinc-700 text-xs lg:text-lg font-light mx-2">text-5xl px-2 font-semibold tracking-tighter text-balance</p>
               <p className="text-zinc-700 text-xs lg:text-lg font-light mx-2">Hero Components</p>
             </div>
             <div className="border-b-1 border-b-zinc-800 w-full" />
-            <h1 className="lg:text-9xl text-5xl px-2 font-semibold my-1 lg:my-4 text-left tracking-tighter text-balance">
+            <h1 className="lg:text-9xl text-white text-5xl px-2 font-semibold my-1 lg:my-4 text-left tracking-tighter text-balance">
               Arkadani Fathir Fahrezi...
             </h1>
             <div className="border-b-1 border-b-zinc-800 w-full" />
