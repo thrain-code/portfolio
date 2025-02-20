@@ -1,3 +1,5 @@
+"use client"
+
 import gambar2 from "@/app/assets/faviconmastermedia.ico"
 import Image from 'next/image';
 

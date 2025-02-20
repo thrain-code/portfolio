@@ -1,29 +1,6 @@
-import { FaTwitter, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-
+"use client"
 
 export default function Footer() {
-  // Data untuk social links
-  const socialLinks = [
-    { icon: <FaTwitter />, href: "#" },
-    { icon: <FaFacebookF />, href: "#" },
-    { icon: <FaInstagram />, href: "#" }
-  ];
-
-  // Data untuk quick links
-  const quickLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Portfolio", href: "#" },
-    { name: "Contact", href: "#" }
-  ];
-
-  // Data untuk contact info
-  const contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "123 Main Street, City, Country" },
-    { icon: <FaEnvelope />, text: "info@example.com" },
-    { icon: <FaPhoneAlt />, text: "+123 456 7890" }
-  ];
-
   return (
     <>
     <div className="border-b-1 border-zinc-800"/>
