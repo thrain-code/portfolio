@@ -8,7 +8,7 @@ export default function experience() {
       <div className="border-b border-zinc-800" />
       <div className="w-full px-8 lg:px-20">
         <div className="flex justify-between bg-zinc-950 border-x border-x-zinc-800 px-2">
-          <p className="text-zinc-700 text-xs lg:text-lg font-light">anjay</p>
+          <p className="text-zinc-700 text-xs lg:text-lg font-light">text-zinc-400 text-xl font-semibold tracking-tighter text-balance</p>
           <p className="text-zinc-700 text-xs lg:text-lg font-light">Experience Components</p>
         </div>
       </div>
@@ -24,7 +24,6 @@ export default function experience() {
         </div>
       </div>
       <div className="border-b border-zinc-800 w-full" />
-      {/* Mobile Responsive */}
       <div className="h-auto lg:h-[50vh] px-8 lg:px-20">
         <div className="flex flex-col lg:flex-row h-full bg-zinc-950 border-x border-x-zinc-800 px-2 overflow-x-auto lg:overflow-visible items-center gap-5 lg:gap-7">
           <M2 />
