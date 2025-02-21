@@ -5,6 +5,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import Image from "next/image";
 import nextLogo from "@/app/assets/faviconNext.ico";
 import vercelLogo from "@/app/assets/favicon.ico";
+import tailwindLogo from "@/app/assets/faviconTailwind.ico";
 
 export default function Footer() {
   const [isDark, setIsDark] = useState(false);
@@ -22,23 +23,58 @@ export default function Footer() {
       <div className="border-b border-zinc-800" />
       <div className="w-full px-8 lg:px-20">
         <div className="flex justify-between bg-zinc-950 border-x border-x-zinc-800 px-2">
-          <p className="text-zinc-700 text-xs lg:text-lg font-light">text-xs text-zinc-400</p>
-          <p className="text-zinc-700 text-xs lg:text-lg font-light">Footer Components</p>
+          <p className="text-zinc-700 text-xs lg:text-lg font-light">
+            text-xs text-zinc-400
+          </p>
+          <p className="text-zinc-700 text-xs lg:text-lg font-light">
+            Footer Components
+          </p>
         </div>
       </div>
       <div className="border-b border-zinc-800 w-full" />
       <footer className="bg-zinc-950 text-white">
         <div className="container flex items-center justify-between mx-auto px-6 py-12">
           <div className="flex items-center gap-2">
-            <span>Built with</span>
-            <Image src={nextLogo} alt="Next.js" className="w-6 h-6" />
-            <Image src={vercelLogo} alt="Vercel" className="w-6 h-6" />
+            <span>Built with:</span>
+            <a
+              href="https://nextjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={nextLogo} alt="Next.js" className="w-6 h-6" />
+            </a>
+            <a
+              href="https://vercel.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={vercelLogo} alt="Vercel" className="w-6 h-6" />
+            </a>
+            <a
+              href="https://tailwindcss.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={tailwindLogo}
+                alt="Tailwind CSS"
+                className="w-6 h-6"
+              />
+            </a>
           </div>
           <button
-            className="p-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition"
+            className="w-10 h-10 bg-zinc-800 rounded-full cursor-pointer select-none 
+             active:translate-y-1 active:[box-shadow:0_0px_0_0_#52525b,0_0px_0_0_#52525b41] 
+             active:border-b-0 transition-all duration-150 
+             [box-shadow:0_4px_0_0_#52525b,0_7px_0_0_#52525b41] 
+             border border-zinc-600 flex items-center justify-center"
             onClick={() => setIsDark(!isDark)}
           >
-            {isDark ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-blue-400" />}
+            {isDark ? (
+              <FaSun className="text-zinc-400 text-sm" />
+            ) : (
+              <FaMoon className="text-zinc-400 text-sm" />
+            )}
           </button>
         </div>
       </footer>
