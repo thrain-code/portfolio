@@ -81,7 +81,7 @@ function CheckBox() {
   )
 }
 
-export default function aboutComp() {
+export default function AboutComp() {
   const [isTyping, setIsTyping] = useState(false);
 
   return (
