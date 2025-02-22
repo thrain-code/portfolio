@@ -6,9 +6,11 @@ import Image from "next/image";
 import nextLogo from "@/app/assets/faviconNext.ico";
 import vercelLogo from "@/app/assets/favicon.ico";
 import tailwindLogo from "@/app/assets/faviconTailwind.ico";
+import yeahRight from "@/app/assets/image.png";
 
 export default function Footer() {
   const [isDark, setIsDark] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -17,6 +19,13 @@ export default function Footer() {
       document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
+
+  useEffect(() => {
+    if (showImage) {
+      const timer = setTimeout(() => setShowImage(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showImage]);
 
   return (
     <>
@@ -32,34 +41,18 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-b border-zinc-800 w-full" />
-      <footer className="bg-zinc-950 text-white">
+      <footer className="bg-zinc-950 text-white relative overflow-hidden">
         <div className="container flex items-center justify-between mx-auto px-6 py-12">
           <div className="flex items-center gap-2">
             <span>Built with:</span>
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">
               <Image src={nextLogo} alt="Next.js" className="w-6 h-6" />
             </a>
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
               <Image src={vercelLogo} alt="Vercel" className="w-6 h-6" />
             </a>
-            <a
-              href="https://tailwindcss.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={tailwindLogo}
-                alt="Tailwind CSS"
-                className="w-6 h-6"
-              />
+            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">
+              <Image src={tailwindLogo} alt="Tailwind CSS" className="w-6 h-6" />
             </a>
           </div>
           <button
@@ -68,14 +61,22 @@ export default function Footer() {
              active:border-b-0 transition-all duration-150 
              [box-shadow:0_4px_0_0_#52525b,0_7px_0_0_#52525b41] 
              border border-zinc-600 flex items-center justify-center"
-            onClick={() => setIsDark(!isDark)}
+            onClick={() => {
+              setIsDark(!isDark);
+              setShowImage(true);
+            }}
           >
-            {isDark ? (
-              <FaSun className="text-zinc-400 text-sm" />
-            ) : (
-              <FaMoon className="text-zinc-400 text-sm" />
-            )}
+            {isDark ? <FaSun className="text-zinc-400 text-sm" /> : <FaMoon className="text-zinc-400 text-sm" />}
           </button>
+        </div>
+
+        {/* Animasi muncul gambar dari kiri */}
+        <div
+          className={`fixed top-1/2 left-0 transform -translate-y-1/2 transition-all duration-500 ${
+            showImage ? "translate-x-0 opacity-100 scale-125" : "-translate-x-full opacity-0 scale-90"
+          }`}
+        >
+          <Image src={yeahRight} alt="Yeah Right" className="w-70 h-auto" />
         </div>
       </footer>
       <div className="border-b border-zinc-800" />
