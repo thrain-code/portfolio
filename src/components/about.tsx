@@ -4,6 +4,49 @@ import { useState } from "react";
 import Title from "@/components/titleComp/title";
 import { FaUser } from "react-icons/fa";
 
+const Timeline = () => {
+  const timelineData = [
+    {
+      step: 1,
+      description:
+        "I became interested in coding when I was in vocational high school, majoring in Software Engineering (RPL). There, I learned the basics of programming and became more curious about how software is built.",
+    },
+    {
+      step: 2,
+      description:
+        "After graduating, I continued my journey by joining the JWP training program, which gave me a deeper insight into the tech industry.",
+    },
+    {
+      step: 3,
+      description:
+        "After that, I had the opportunity to intern at an IT company. That was where I first learned to use frameworks, and my first experience was with Vue and Laravel.",
+    },
+    {
+      step: 4,
+      description:
+        "Since then, I have become more passionate and continued learning, exploring various other frameworks, as you may already know.",
+    },
+  ];
+
+  return (
+    <div className="relative flex flex-col space-y-6">
+
+      {/* Render Timeline Items */}
+      {timelineData.map((item, index) => (
+        <div key={index} className="relative flex items-start space-x-4 group">
+          <div className="w-10 h-10 flex items-center justify-center">
+            {item.step}
+          </div>
+          <p className="text-zinc-300 text-lg pb-3 rounded-xl">
+            {item.description}
+            <div className="border-b mt-3 border-zinc-800 w-full" />
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 function AboutStory() {
   const [activeTab, setActiveTab] = useState("journey");
 
@@ -34,18 +77,7 @@ function AboutStory() {
 
       <div className="text-zinc-300 lg:text-lg text-sm px-4">
         {activeTab === "journey" && (
-          <p>
-            I became interested in coding when I was in vocational high school,
-            majoring in Software Engineering (RPL). There, I learned the basics
-            of programming and became more curious about how software is built.
-            After graduating, I continued my journey by joining the JWP training
-            program, which gave me a deeper insight into the tech industry.
-            After that, I had the opportunity to intern at an IT company. That
-            was where I first learned to use frameworks, and my first experience
-            was with Vue and Laravel. Since then, I have become more passionate
-            and continued learning, exploring various other frameworks, as you
-            may already know.
-          </p>
+          <Timeline/>
         )}
         {activeTab === "mindset" && (
           <p>
@@ -71,14 +103,6 @@ function AboutStory() {
       </div>
     </div>
   );
-}
-
-function CheckBox() {
-  return(
-    <>
-    <Title title="" subtitle=" Components" Icon={FaUser} />
-    </>
-  )
 }
 
 export default function AboutComp() {
@@ -162,7 +186,6 @@ export default function AboutComp() {
           </div>
         </div>
       </div>
-      <CheckBox/>
     </>
   );
 }
