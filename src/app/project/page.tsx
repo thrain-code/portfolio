@@ -1,7 +1,11 @@
+import Project from "@/components/project"
+
 export default function project() {
   return(
     <>
-    kontol
+    <div className="h-full">
+      <Project/>
+    </div>
     </>
   )
 }
