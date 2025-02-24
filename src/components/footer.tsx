@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import Image from "next/image";
-import nextLogo from "@/app/assets/faviconNext.ico";
-import vercelLogo from "@/app/assets/favicon.ico";
-import tailwindLogo from "@/app/assets/faviconTailwind.ico";
+import nextLogo from "@/app/assets/logo_fm/faviconNext.ico";
+import vercelLogo from "@/app/assets/logo_fm/favicon.ico";
+import tailwindLogo from "@/app/assets/logo_fm/faviconTailwind.ico";
 import yeahRight from "@/app/assets/image.png";
 
 export default function Footer() {

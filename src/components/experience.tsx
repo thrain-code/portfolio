@@ -2,8 +2,8 @@
 import Title from "@/components/titleComp/title"
 import { FaGraduationCap } from "react-icons/fa";
 import Image, { StaticImageData } from "next/image";
-import gambarMasterMedia from "@/app/assets/faviconmastermedia.ico";
-import gambarBpr from "@/app/assets/faviconbpr.ico";
+import gambarMasterMedia from "@/app/assets/logo_fm/faviconmastermedia.ico";
+import gambarBpr from "@/app/assets/logo_fm/faviconbpr.ico";
 
 interface ExperienceCardProps {
   image: StaticImageData;

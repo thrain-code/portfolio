@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Title from "@/components/titleComp/title";
 import { FaUser } from "react-icons/fa";
+import Tools from "@/components/aboutComp/tools"
 
 const Timeline = () => {
   const timelineData = [
@@ -34,7 +35,7 @@ const Timeline = () => {
         <div key={index} className="flex flex-col">
           <div className="flex px-3 text-xl font-semibold">
             {item.step}
-            <p className="text-zinc-600 px-2 pb-2 text-sm lg:text-lg font-light">{item.description}</p>
+            <p className="text-zinc-600 px-3 pb-3 text-sm lg:text-lg font-light text-justify">{item.description}</p>
           </div>
           <div className="border-b border-zinc-800 w-full" />
         </div>
@@ -75,9 +76,9 @@ function AboutStory() {
         {activeTab === "journey" && <Timeline />}
         {activeTab === "mindset" && (
           <div>
-            <h1 className="px-2 pb-2 text-xl font-semibold">Always never satisfied with your work to push you forward...</h1>
+            <h1 className="px-3 pb-3 text-xl font-semibold">Always never satisfied with your work to push you forward...</h1>
             <div className="border-b border-zinc-800 w-full" />
-            <p className="text-zinc-600 px-2 pb-2 text-sm lg:text-lg">
+            <p className="text-zinc-600 px-3 pb-3 text-sm lg:text-lg text-justify">
               As a developer, I have never believed in talent. Talent is just
               luck granted to those who don’t even have to try. Meanwhile, I
               have to struggle, sacrifice my time, energy, and mind just to
@@ -183,6 +184,7 @@ export default function AboutComp() {
           </div>
         </div>
       </div>
+      <Tools/>
     </>
   );
 }
