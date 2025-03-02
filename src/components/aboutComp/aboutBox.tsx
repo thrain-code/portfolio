@@ -9,7 +9,7 @@ export default function AboutBox() {
 
   // Add subtle animation on mouse move for immersive effect
   useEffect(() => {
-    const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!isFocused) {
         const { clientX, clientY } = e;
         const centerX = window.innerWidth / 2;
@@ -150,9 +150,9 @@ export default function AboutBox() {
           {/* Code section */}
           <div className="p-3 border-b border-zinc-700 bg-zinc-900 font-mono text-xs text-zinc-300">
             <div><span className="text-pink-400">const</span> <span className="text-blue-400">developer</span> = {`{`}</div>
-            <div className="pl-4"><span className="text-green-400">name</span>: <span className="text-amber-300">"Your Name"</span>,</div>
-            <div className="pl-4"><span className="text-green-400">skills</span>: [<span className="text-amber-300">"React"</span>, <span className="text-amber-300">"Next.js"</span>, <span className="text-amber-300">"Tailwind"</span>],</div>
-            <div className="pl-4"><span className="text-green-400">passion</span>: <span className="text-amber-300">"Building beautiful UIs"</span></div>
+            <div className="pl-4"><span className="text-green-400">name</span>: <span className="text-amber-300">&quot;Your Name&quot;</span>,</div>
+            <div className="pl-4"><span className="text-green-400">skills</span>: [<span className="text-amber-300">&quot;React&quot;</span>, <span className="text-amber-300">&quot;Next.js&quot;</span>, <span className="text-amber-300">&quot;Tailwind&quot;</span>],</div>
+            <div className="pl-4"><span className="text-green-400">passion</span>: <span className="text-amber-300">&quot;Building beautiful UIs&quot;</span></div>
             <div>{`}`};</div>
           </div>
 
