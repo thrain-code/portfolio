@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Key } from 'react';
+import { useState, useEffect, Key } from 'react';
 
 export default function TerminalBox() {
   const [hovered, setHovered] = useState(false);
@@ -55,9 +55,9 @@ console.log("Ready for new commands...");`;
 
   // Format the text with syntax highlighting
   const formatText = (text: string) => {
-    return text.split('\n').map((line: string, lineIndex: Key | null | undefined) => {
+    return text.split('\n').map((line: string, lineIndex: Key) => {
       // Keywords
-      let formattedLine = line
+      const formattedLine = line
         .replace(/\b(const|let|var|function|return|if|else|for|while)\b/g, '<span class="text-pink-400">$1</span>')
         .replace(/\b(developer|projects|console)\b/g, '<span class="text-blue-400">$1</span>')
         .replace(/\b(name|skills|passion|log)\b/g, '<span class="text-green-400">$1</span>')
