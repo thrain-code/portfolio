@@ -1,41 +1,73 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, Key } from 'react';
 
-export default function AboutBox() {
-  const [isFocused, setIsFocused] = useState(false);
+export default function TerminalBox() {
   const [hovered, setHovered] = useState(false);
-  const [rotation, setRotation] = useState({ x: 50, z: 45 });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [textContent, setTextContent] = useState('');
+  const [rotation] = useState({ x: 50, z: 45 });
+  const [displayText, setDisplayText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const [typingIndex, setTypingIndex] = useState(0);
+  
+  // The full text that will be typed out
+  const fullText = `const developer = {
+  name: "Your Name",
+  skills: ["React", "Next.js", "Tailwind"],
+  passion: "Building beautiful UIs"
+};
 
-  // Add subtle animation on mouse move for immersive effect
+// Projects
+const projects = [
+  "Terminal UI",
+  "Dashboard",
+  "Portfolio"
+];
+
+console.log("Ready for new commands...");`;
+
+  // Cursor blink effect
+  const [showCursor, setShowCursor] = useState(true);
+  
+  // Control typing speed
+  const typingSpeed = 50; // milliseconds per character
+  const cursorBlinkRate = 530; // milliseconds
+
+  // Set up typing animation
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isFocused) {
-        const { clientX, clientY } = e;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        
-        // Calculate rotation based on mouse position
-        const rotX = 50 + ((clientY - centerY) / centerY) * 5;
-        const rotZ = 45 + ((clientX - centerX) / centerX) * 5;
-        
-        setRotation({ x: rotX, z: rotZ });
-        setPosition({ 
-          x: ((clientX - centerX) / centerX) * 10,
-          y: ((clientY - centerY) / centerY) * 10
-        });
-      }
-    };
+    if (isTyping && typingIndex < fullText.length) {
+      const typingTimer = setTimeout(() => {
+        setDisplayText(fullText.substring(0, typingIndex + 1));
+        setTypingIndex(typingIndex + 1);
+      }, typingSpeed);
+      
+      return () => clearTimeout(typingTimer);
+    } else if (typingIndex >= fullText.length) {
+      setIsTyping(false);
+    }
+  }, [isTyping, typingIndex, fullText]);
+  
+  // Set up cursor blinking
+  useEffect(() => {
+    const cursorTimer = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, cursorBlinkRate);
+    
+    return () => clearInterval(cursorTimer);
+  }, []);
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [isFocused]);
-
-  const handleSubmit = () => {
-    console.log('Submitted content:', textContent);
-    // Add your submit logic here
-    alert('Content submitted: ' + textContent);
-    setTextContent('');
+  // Format the text with syntax highlighting
+  const formatText = (text: string) => {
+    return text.split('\n').map((line: string, lineIndex: Key | null | undefined) => {
+      // Keywords
+      let formattedLine = line
+        .replace(/\b(const|let|var|function|return|if|else|for|while)\b/g, '<span class="text-pink-400">$1</span>')
+        .replace(/\b(developer|projects|console)\b/g, '<span class="text-blue-400">$1</span>')
+        .replace(/\b(name|skills|passion|log)\b/g, '<span class="text-green-400">$1</span>')
+        .replace(/"([^"]*)"/g, '<span class="text-amber-300">"$1"</span>')
+        .replace(/\/\/(.*)/g, '<span class="text-zinc-500">\/\/$1</span>');
+      
+      return (
+        <div key={lineIndex} dangerouslySetInnerHTML={{ __html: formattedLine }} />
+      );
+    });
   };
 
   return (
@@ -45,20 +77,20 @@ export default function AboutBox() {
         {`
           .fade-mask {
             -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
-            mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
+            mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 45%);
           }
           
           @media (min-width: 640px) {
             .fade-mask {
               -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 75%);
-              mask-image: radial-gradient(circle, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 75%);
+              mask-image: radial-gradient(circle, rgba(0,0,0,1) 35%, rgba(0,0,0,0) 60%);
             }
           }
           
           @media (min-width: 1024px) {
             .fade-mask {
               -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
-              mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+              mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 60%);
             }
           }
           
@@ -75,16 +107,8 @@ export default function AboutBox() {
             transform: scale(1.2);
           }
 
-          .animated-grid td {
-            transition: background-color 0.5s ease;
-          }
-
-          .animated-grid td:hover {
-            background-color: rgba(90, 90, 255, 0.1);
-          }
-
           .window-content {
-            height: 240px;
+            height: 320px;
             overflow-y: auto;
             scrollbar-width: thin;
             scrollbar-color: #666 #222;
@@ -102,19 +126,20 @@ export default function AboutBox() {
             background-color: #666;
             border-radius: 6px;
           }
-
-          .submit-button {
-            background-color: #3b82f6;
-            transition: all 0.3s ease;
+          
+          .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background-color: #4f94ef;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 1px;
           }
-
-          .submit-button:hover {
-            background-color: #2563eb;
-            transform: translateY(-1px);
-          }
-
-          .submit-button:active {
-            transform: translateY(1px);
+          
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
           }
         `}
       </style>
@@ -127,59 +152,35 @@ export default function AboutBox() {
         `}
         style={{
           transform: `rotateX(${rotation.x}deg) rotateZ(${rotation.z}deg) translateZ(${
-            isFocused ? '40px' : hovered ? '20px' : '0px'
-          }) translateX(${position.x}px) translateY(${position.y}px)`,
+            hovered ? '20px' : '0px'
+          })`,
           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         {/* Title bar with improved interaction */}
-        <div className="flex justify-between items-center p-2 border-t border-x border-zinc-400 rounded-t-lg w-full bg-gradient-to-r from-zinc-900 to-zinc-800">
+        <div className="flex justify-between items-center p-2 border border-zinc-400 rounded-t-lg w-full bg-zinc-950">
           <div className="flex space-x-2">
             <span className="h-3 w-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors cursor-pointer"></span>
             <span className="h-3 w-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors cursor-pointer"></span>
             <span className="h-3 w-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></span>
           </div>
-          <div className="text-zinc-400 text-xs font-mono">about.js</div>
+          <div className="text-zinc-400 text-xs font-mono">terminal.js</div>
           <div className="w-16"></div> {/* Spacer for balance */}
         </div>
 
-        {/* Enhanced content with multiple sections */}
+        {/* Terminal content */}
         <div className="window-content border-x border-zinc-400">
-          {/* Code section */}
-          <div className="p-3 border-b border-zinc-700 bg-zinc-900 font-mono text-xs text-zinc-300">
-            <div><span className="text-pink-400">const</span> <span className="text-blue-400">developer</span> = {`{`}</div>
-            <div className="pl-4"><span className="text-green-400">name</span>: <span className="text-amber-300">&quot;Your Name&quot;</span>,</div>
-            <div className="pl-4"><span className="text-green-400">skills</span>: [<span className="text-amber-300">&quot;React&quot;</span>, <span className="text-amber-300">&quot;Next.js&quot;</span>, <span className="text-amber-300">&quot;Tailwind&quot;</span>],</div>
-            <div className="pl-4"><span className="text-green-400">passion</span>: <span className="text-amber-300">&quot;Building beautiful UIs&quot;</span></div>
-            <div>{`}`};</div>
-          </div>
-
-          {/* Data section */}
-          <div className="w-full p-4 bg-zinc-800">
-            <textarea
-              className="w-full bg-zinc-800 text-zinc-200 border border-zinc-600 p-2 rounded resize-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 h-20"
-              placeholder="Write here..."
-              value={textContent}
-              onChange={(e) => setTextContent(e.target.value)}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-            ></textarea>
-            
-            {/* Submit button */}
-            <button 
-              onClick={handleSubmit}
-              className="submit-button mt-2 w-full text-white font-medium py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-            >
-              Submit
-            </button>
+          <div className="p-4 bg-zinc-950 font-mono text-xs text-zinc-300 h-full">
+            {formatText(displayText)}
+            {showCursor && <span className="inline-block w-2 h-4 bg-zinc-300 ml-1 animate-pulse"></span>}
           </div>
         </div>
 
         {/* Status bar */}
-        <div className="flex justify-between items-center px-2 py-1 border border-zinc-400 rounded-b-lg bg-gradient-to-r from-zinc-800 to-zinc-900 text-xs text-zinc-500">
-          <span>Status: {isFocused ? "Editing" : "Ready"}</span>
+        <div className="flex justify-between items-center px-2 py-1 border border-zinc-400 rounded-b-lg bg-zinc-950 text-xs text-zinc-500">
+          <span>Status: {isTyping ? "Typing..." : "Ready"}</span>
           <span>v1.0.0</span>
         </div>
       </div>
@@ -199,9 +200,6 @@ export default function AboutBox() {
                       key={colIndex}
                       className="border border-zinc-800
                       w-3 h-3 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
-                      style={{
-                        backgroundColor: (rowIndex + colIndex) % 4 === 0 ? 'rgba(59, 130, 246, 0.03)' : '',
-                      }}
                     ></td>
                   ))}
                 </tr>
