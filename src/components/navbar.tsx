@@ -51,7 +51,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
                 <div className="relative px-3 py-2 cursor-pointer group">
-                  <span className="relative z-10 block text-gray-200 transition-colors duration-300 group-hover:text-zinc-400">
+                  <span className="relative z-10 block text-gray-200 text-xl transition-colors duration-300 group-hover:text-zinc-400">
                     {item.name}
                   </span>
                 </div>

@@ -87,7 +87,7 @@ function Hero() {
             <p className="lg:text-2xl font-medium text-sm lg:p-4 p-2 text-zinc-600 text-left">
               A seasoned web developer, well-versed in
               <a
-                href=""
+                href="https://nuxt.com/"
                 className="text-zinc-400 cursor-pointer hover:text-emerald-500"
               >
                 {" "}
@@ -95,7 +95,7 @@ function Hero() {
               </a>
               ,
               <a
-                href=""
+                href="https://vuejs.org/"
                 className="text-zinc-400 cursor-pointer hover:text-green-500"
               >
                 {" "}
@@ -103,15 +103,15 @@ function Hero() {
               </a>
               ,
               <a
-                href=""
+                href="https://laravel.com/"
                 className="text-zinc-400 cursor-pointer hover:text-red-500"
               >
                 {" "}
-                Laravel with Inertia
+                Laravel
               </a>
               , and
               <a
-                href=""
+                href="https://tailwindcss.com/"
                 className="text-zinc-400 cursor-pointer hover:text-cyan-500"
               >
                 {" "}
@@ -119,7 +119,7 @@ function Hero() {
               </a>
               , possessing profound mastery of the backend arts through
               <a
-                href=""
+                href="https://spring.io/"
                 className="text-zinc-400 cursor-pointer hover:text-yellow-500"
               >
                 {" "}
@@ -127,7 +127,7 @@ function Hero() {
               </a>{" "}
               and
               <a
-                href=""
+                href="https://www.mysql.com/"
                 className="text-zinc-400 cursor-pointer hover:text-indigo-500"
               >
                 {" "}
