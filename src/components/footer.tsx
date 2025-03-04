@@ -83,7 +83,7 @@ export default function Footer() {
       <div className="w-full px-8 lg:px-20 h-12">
         <div className="flex justify-center items-center h-full bg-zinc-950 border-x border-x-zinc-800 px-2">
           <div className="lg:text-lg text-xs text-zinc-400">
-            &copy; {new Date().getFullYear()} Dani. All rights reserved.
+            &copy; {new Date().getFullYear()} Thrain. All rights reserved.
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Link href="/">
             <div
-              className="text-xl font-bold cursor-pointer"
+              className="lg:text-3xl text-xl font-bold cursor-pointer"
             >
               Portofolio
             </div>

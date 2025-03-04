@@ -7,21 +7,21 @@ export default function TerminalBox() {
   const [isTyping, setIsTyping] = useState(true);
   const [typingIndex, setTypingIndex] = useState(0);
   
-  // The full text that will be typed out
-  const fullText = `const developer = {
-  name: "Your Name",
-  skills: ["React", "Next.js", "Tailwind"],
-  passion: "Building beautiful UIs"
-};
-
-// Projects
-const projects = [
-  "Terminal UI",
-  "Dashboard",
-  "Portfolio"
-];
-
-console.log("Ready for new commands...");`;
+  const fullText = `const thrain: Developer = {
+    name: "Arkadani Fathir Fahrezi",
+    skills: ["TypeScript", "Vue.js", "Nuxt 3", "Tailwind CSS", "Laravel", "Spring Boot"],
+    passion: "Crafting futuristic and interactive web experiences",
+    projects: ["Portfolio", "Admin Dashboard", "E-commerce", "Learning System Management"],
+  };
+  
+  type Developer = {
+    name: string;
+    skills: string[];
+    passion: string;
+    projects: string[];
+  };
+  
+  console.log("System initialized. Welcome, Arkadani!");`;
 
   // Cursor blink effect
   const [showCursor, setShowCursor] = useState(true);
@@ -61,8 +61,6 @@ console.log("Ready for new commands...");`;
         .replace(/\b(const|let|var|function|return|if|else|for|while)\b/g, '<span class="text-pink-400">$1</span>')
         .replace(/\b(developer|projects|console)\b/g, '<span class="text-blue-400">$1</span>')
         .replace(/\b(name|skills|passion|log)\b/g, '<span class="text-green-400">$1</span>')
-        .replace(/"([^"]*)"/g, '<span class="text-amber-300">"$1"</span>')
-        .replace(/\/\/(.*)/g, '<span class="text-zinc-500">\/\/$1</span>');
       
       return (
         <div key={lineIndex} dangerouslySetInnerHTML={{ __html: formattedLine }} />
@@ -148,7 +146,6 @@ console.log("Ready for new commands...");`;
         className={`flex-col flex z-30 bg-zinc-950 rounded-lg transition-all duration-300 
           w-10/12 sm:w-8/12 md:w-8/12 lg:w-8/12 xl:w-7/12 
           scale-65 sm:scale-75 md:scale-95 lg:scale-110 xl:scale-120
-          my-8 sm:my-0
         `}
         style={{
           transform: `rotateX(${rotation.x}deg) rotateZ(${rotation.z}deg) translateZ(${
@@ -172,9 +169,9 @@ console.log("Ready for new commands...");`;
 
         {/* Terminal content */}
         <div className="window-content border-x border-zinc-400">
-          <div className="p-4 bg-zinc-950 font-mono text-xs text-zinc-300 h-full">
+          <div className="p-4 bg-zinc-950 font-mono lg:text-md text-xs text-zinc-300 h-full">
             {formatText(displayText)}
-            {showCursor && <span className="inline-block w-2 h-4 bg-zinc-300 ml-1 animate-pulse"></span>}
+            {showCursor && <span className="inline-block w-2 h-4 bg-zinc-400 ml-1 animate-pulse"></span>}
           </div>
         </div>
 
