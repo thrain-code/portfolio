@@ -36,7 +36,7 @@ function Hero() {
               <p className="lg:text-lg text-sm text-zinc-400">unemployed person</p>
             </div>
             <div className="w-full lg:flex-col flex lg:w-64 lg:h-64 mx-4">
-              <div className=" bg-zinc-900 rounded-xl">
+              <div className=" border-zinc-400 border rounded-xl">
                 <div className="flex items-center space-x-1 p-2 rounded-t-lg">
                   <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
                   <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
@@ -45,7 +45,7 @@ function Hero() {
                 <Image
                   src={profileImage}
                   alt="Profile Image"
-                  className="p-1 rounded-b-lg"
+                  className="p-1 rounded-b-xl"
                 />
               </div>
               {/* social media link */}

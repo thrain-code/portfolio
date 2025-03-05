@@ -23,14 +23,11 @@ export default function TerminalBox() {
   
   console.log("System initialized. Welcome, Arkadani!");`;
 
-  // Cursor blink effect
   const [showCursor, setShowCursor] = useState(true);
   
-  // Control typing speed
-  const typingSpeed = 50; // milliseconds per character
-  const cursorBlinkRate = 530; // milliseconds
+  const typingSpeed = 50; 
+  const cursorBlinkRate = 530;
 
-  // Set up typing animation
   useEffect(() => {
     if (isTyping && typingIndex < fullText.length) {
       const typingTimer = setTimeout(() => {
@@ -44,7 +41,6 @@ export default function TerminalBox() {
     }
   }, [isTyping, typingIndex, fullText]);
   
-  // Set up cursor blinking
   useEffect(() => {
     const cursorTimer = setInterval(() => {
       setShowCursor(prev => !prev);
@@ -53,10 +49,8 @@ export default function TerminalBox() {
     return () => clearInterval(cursorTimer);
   }, []);
 
-  // Format the text with syntax highlighting
   const formatText = (text: string) => {
     return text.split('\n').map((line: string, lineIndex: Key) => {
-      // Keywords
       const formattedLine = line
         .replace(/\b(const|let|var|function|return|if|else|for|while)\b/g, '<span class="text-pink-400">$1</span>')
         .replace(/\b(developer|projects|console)\b/g, '<span class="text-blue-400">$1</span>')
@@ -70,7 +64,6 @@ export default function TerminalBox() {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Enhanced styles */}
       <style>
         {`
           .fade-mask {
@@ -156,7 +149,6 @@ export default function TerminalBox() {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* Title bar with improved interaction */}
         <div className="flex justify-between items-center p-2 border border-zinc-400 rounded-t-lg w-full bg-zinc-950">
           <div className="flex space-x-2">
             <span className="h-3 w-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors cursor-pointer"></span>
@@ -164,10 +156,9 @@ export default function TerminalBox() {
             <span className="h-3 w-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></span>
           </div>
           <div className="text-zinc-400 text-xs font-mono">terminal.js</div>
-          <div className="w-16"></div> {/* Spacer for balance */}
+          <div className="w-16"></div>
         </div>
 
-        {/* Terminal content */}
         <div className="window-content border-x border-zinc-400">
           <div className="p-4 bg-zinc-950 font-mono lg:text-md text-xs text-zinc-300 h-full">
             {formatText(displayText)}
@@ -175,14 +166,12 @@ export default function TerminalBox() {
           </div>
         </div>
 
-        {/* Status bar */}
         <div className="flex justify-between items-center px-2 py-1 border border-zinc-400 rounded-b-lg bg-zinc-950 text-xs text-zinc-500">
           <span>Status: {isTyping ? "Typing..." : "Ready"}</span>
           <span>v1.0.0</span>
         </div>
       </div>
 
-      {/* Improved grid background with subtle animation */}
       <div className="absolute inset-0 z-20 flex items-center justify-center overflow-hidden">
         <div className="relative fade-mask" style={{ transform: 'rotateX(50deg) rotateZ(45deg)' }}>
           <table
