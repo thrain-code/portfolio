@@ -1,33 +1,34 @@
 import Title from "./titleComp/title";
 import { FaProjectDiagram } from "react-icons/fa";
 import ProjectGrid from "../components/projectComp/projectGrid";
-import project1 from "@/app/assets/batman.jpeg"
+import portfolio from "@/app/assets/portfolio.png";
+import port_scanner from "@/app/assets/port_scanner.png"
 
 export default function Project() {
   const projects = [
     {
-      title: "Project 1",
-      description: "This is a brief description of project 1.",
-      image: project1,
-      link: "#"
+      title: "Portfolio",
+      description: "My portfolio build from stratch",
+      image: portfolio,
+      link: "https://portfolio-thrain.vercel.app/",
+      tags: ["Next", "TypeScript", "Tailwind", "Vercel"],
     },
     {
-      title: "Project 2",
-      description: "This is a brief description of project 2.",
-      image: project1,
-      link: "#"
+      title: "Thrain Rush",
+      description: "Basic port scanner with few extra feature",
+      image: port_scanner,
+      link: "https://github.com/thrain-traitor/port_scan",
+      tags: ["Python"],
     },
-    {
-      title: "Project 3",
-      description: "This is a brief description of project 3.",
-      image: project1,
-      link: "#"
-    }
   ];
 
   return (
     <>
-      <Title subtitle="Project Components" title="Project" Icon={FaProjectDiagram} />
+      <Title
+        subtitle="Project Components"
+        title="Project"
+        Icon={FaProjectDiagram}
+      />
       <div className="border-b border-zinc-800 w-full" />
       <div className="h-auto px-8 lg:px-20">
         <div className="flex flex-col h-full bg-zinc-950 border-x border-x-zinc-800">
