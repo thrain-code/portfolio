@@ -139,10 +139,7 @@ const AboutStory: React.FC = () => {
               style={{ maxHeight: 'calc(70vh - 120px)' }}
             >
               <div className="space-y-3">
-                <div className="px-3 pb-3 flex items-center gap-3">
-                  <span className="text-xl font-semibold bg-zinc-800/50 rounded-full w-8 h-8 flex items-center justify-center text-zinc-300">
-                    ⚡
-                  </span>
+                <div className="px-3 pb-3 flex items-center">
                   <h1 className="text-xl font-semibold">Always never satisfied with your work to push you forward...</h1>
                 </div>
                 <div className="border-b border-zinc-800 w-full" />
@@ -167,12 +164,10 @@ const AboutStory: React.FC = () => {
                 </p>
                 
                 <div className="border-t border-zinc-800 w-full mt-4 pt-4" />
-                <div className="px-3 pb-3 flex items-center gap-3">
-                  <span className="text-xl font-semibold bg-zinc-800/50 rounded-full w-8 h-8 flex items-center justify-center text-zinc-300">
-                    🔥
-                  </span>
+                <div className="px-3 pb-3 flex items-center">
                   <h1 className="text-xl font-semibold">Embracing challenges and continuous growth...</h1>
                 </div>
+                <div className="border-b border-zinc-800 w-full" />
                 <p className="text-zinc-600 px-3 pb-3 text-sm lg:text-lg text-justify">
                   Every error message is a lesson, every bug is an opportunity to learn, and every failed project is a stepping stone toward mastery. What separates true developers from the rest is not how easily they grasp concepts, but how persistently they pursue solutions when faced with obstacles. I&apos;ve come to realize that the path to excellence is paved with countless hours of debugging, researching, and refactoring. The more I struggle with a problem, the deeper my understanding becomes when I finally solve it. This mindset has transformed my approach to coding—I no longer fear complexity but welcome it as a chance to expand my capabilities. The journey of a developer is not about reaching a destination but about continuously evolving and adapting to new challenges.
                 </p>
