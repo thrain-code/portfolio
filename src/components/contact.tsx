@@ -5,8 +5,7 @@ import Title from "@/components/titleComp/title";
 import { 
   FaEnvelopeOpenText, 
   FaUser, 
-  FaPaperPlane,
-  FaCode
+  FaPaperPlane
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -110,20 +109,20 @@ export default function ContactComp() {
               <div className="p-4 font-mono text-xs lg:text-sm overflow-auto max-h-[550px]">
                 <div className="flex text-zinc-400">
                   <div className="flex-1">
-                    <div className="text-emerald-400">// Contact form</div>
+                    <div className="text-emerald-400">{'// Contact form'}</div>
                     <div className="text-pink-400">export default <span className="text-cyan-400">function</span> <span className="text-yellow-300">ContactForm</span>() {'{'}</div>
                     <div className="ml-4 text-cyan-400">const [formData, setFormData] = useState({'{'}</div>
-                    <div className="ml-8 text-zinc-300">name: <span className="text-amber-300">""</span>,</div>
-                    <div className="ml-8 text-zinc-300">email: <span className="text-amber-300">""</span>,</div>
-                    <div className="ml-8 text-zinc-300">message: <span className="text-amber-300">""</span></div>
+                    <div className="ml-8 text-zinc-300">name: <span className="text-amber-300">&quot;&quot;</span>,</div>
+                    <div className="ml-8 text-zinc-300">email: <span className="text-amber-300">&quot;&quot;</span>,</div>
+                    <div className="ml-8 text-zinc-300">message: <span className="text-amber-300">&quot;&quot;</span></div>
                     <div className="ml-4 text-cyan-400">{'}'})</div>
                     <br/>
                     <div className="ml-4 text-cyan-400">return (</div>
-                    <div className="ml-8 text-pink-400">{'<form '}<span className="text-blue-400">className</span>=<span className="text-amber-300">"space-y-4"</span>{'>'}</div>
-                    <div className="ml-12 text-emerald-400">{'/* Name, email & message inputs */}'}</div>
-                    <div className="ml-12 text-pink-400">{'<input '}<span className="text-blue-400">className</span>=<span className="text-amber-300">"bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md"</span> /{'>'}</div>
+                    <div className="ml-8 text-pink-400">{'<form '}<span className="text-blue-400">className</span>=<span className="text-amber-300">&quot;space-y-4&quot;</span>{'>'}</div>
+                    <div className="ml-12 text-emerald-400">{'/* Name, email & message inputs */'}</div>
+                    <div className="ml-12 text-pink-400">{'<input '}<span className="text-blue-400">className</span>=<span className="text-amber-300">&quot;bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md&quot;</span> /{'>'}</div>
                     <div className="ml-12 text-zinc-500">...</div>
-                    <div className="ml-12 text-pink-400">{'<button '}<span className="text-blue-400">type</span>=<span className="text-amber-300">"submit"</span>{'>'}</div>
+                    <div className="ml-12 text-pink-400">{'<button '}<span className="text-blue-400">type</span>=<span className="text-amber-300">&quot;submit&quot;</span>{'>'}</div>
                     <div className="ml-16 text-zinc-300">Send Message</div>
                     <div className="ml-12 text-pink-400">{'</button>'}</div>
                     <div className="ml-8 text-pink-400">{'</form>'}</div>
