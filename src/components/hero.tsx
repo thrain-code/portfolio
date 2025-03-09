@@ -11,12 +11,12 @@ const socialLinks = [
     name: "GitHub"
   },
   { 
-    href: "https://instagram.com/yourusername", 
+    href: "https://www.instagram.com/dev_bythrain/", 
     icon: <FaInstagram className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#E1306C]" />,
     name: "Instagram"
   },
   { 
-    href: "mailto:your@email.com", 
+    href: "examp@gmail.com", 
     icon: <FaEnvelope className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#EA4335]" />,
     name: "Email"
   }
