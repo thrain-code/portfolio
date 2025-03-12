@@ -85,57 +85,11 @@ export default function ContactComp() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 lg:p-6">
-            {/* Simple Code Box with Animation */}
-            <motion.div 
-              className="bg-zinc-900/30 rounded-lg border border-zinc-800 overflow-hidden shadow-lg"
-              initial={{ opacity: 0, y: 100 }}
-              animate={animationReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
-              transition={{ 
-                duration: 0.7, 
-                ease: [0.22, 1, 0.36, 1], // Custom easing for smooth motion
-                delay: 0.1
-              }}
-            >
-              <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-700">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <span className="text-xs text-zinc-400 font-mono">contact.tsx</span>
-              </div>
-              
-              <div className="p-4 font-mono text-xs lg:text-sm overflow-auto max-h-[550px]">
-                <div className="flex text-zinc-400">
-                  <div className="flex-1">
-                    <div className="text-emerald-400">{'// Contact form'}</div>
-                    <div className="text-pink-400">export default <span className="text-cyan-400">function</span> <span className="text-yellow-300">ContactForm</span>() {'{'}</div>
-                    <div className="ml-4 text-cyan-400">const [formData, setFormData] = useState({'{'}</div>
-                    <div className="ml-8 text-zinc-300">name: <span className="text-amber-300">&quot;&quot;</span>,</div>
-                    <div className="ml-8 text-zinc-300">email: <span className="text-amber-300">&quot;&quot;</span>,</div>
-                    <div className="ml-8 text-zinc-300">message: <span className="text-amber-300">&quot;&quot;</span></div>
-                    <div className="ml-4 text-cyan-400">{'}'})</div>
-                    <br/>
-                    <div className="ml-4 text-cyan-400">return (</div>
-                    <div className="ml-8 text-pink-400">{'<form '}<span className="text-blue-400">className</span>=<span className="text-amber-300">&quot;space-y-4&quot;</span>{'>'}</div>
-                    <div className="ml-12 text-emerald-400">{'/* Name, email & message inputs */'}</div>
-                    <div className="ml-12 text-pink-400">{'<input '}<span className="text-blue-400">className</span>=<span className="text-amber-300">&quot;bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md&quot;</span> /{'>'}</div>
-                    <div className="ml-12 text-zinc-500">...</div>
-                    <div className="ml-12 text-pink-400">{'<button '}<span className="text-blue-400">type</span>=<span className="text-amber-300">&quot;submit&quot;</span>{'>'}</div>
-                    <div className="ml-16 text-zinc-300">Send Message</div>
-                    <div className="ml-12 text-pink-400">{'</button>'}</div>
-                    <div className="ml-8 text-pink-400">{'</form>'}</div>
-                    <div className="ml-4 text-cyan-400">)</div>
-                    <div className="text-pink-400">{'}'}</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+          <div className="flex lg:flex-row flex-col-reverse justify-center gap-4 p-4 lg:p-6">
             
             {/* Contact Form with Animation */}
             <motion.div 
-              className="bg-zinc-900/30 backdrop-blur-sm rounded-lg border border-zinc-800 p-6 shadow-lg"
+              className="bg-zinc-900/30 w-full backdrop-blur-sm rounded-lg border border-zinc-800 p-6 shadow-lg"
               initial={{ opacity: 0, y: 100 }}
               animate={animationReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
               transition={{ 
@@ -280,6 +234,54 @@ export default function ContactComp() {
                 )}
               </form>
             </motion.div>
+
+            {/* Simple Code Box with Animation */}
+            <motion.div 
+              className="bg-zinc-900/30 rounded-lg border border-zinc-800 overflow-hidden shadow-lg"
+              initial={{ opacity: 0, y: 100 }}
+              animate={animationReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+              transition={{ 
+                duration: 0.7, 
+                ease: [0.22, 1, 0.36, 1], // Custom easing for smooth motion
+                delay: 0.1
+              }}
+            >
+              <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-700">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <span className="text-xs text-zinc-400 font-mono">contact.tsx</span>
+              </div>
+              
+              <div className="p-4 font-mono text-xs lg:text-sm overflow-auto max-h-[550px]">
+                <div className="flex text-zinc-400">
+                  <div className="flex-1">
+                    <div className="text-emerald-400">{'// Contact form'}</div>
+                    <div className="text-pink-400">export default <span className="text-cyan-400">function</span> <span className="text-yellow-300">ContactForm</span>() {'{'}</div>
+                    <div className="ml-4 text-cyan-400">const [formData, setFormData] = useState({'{'}</div>
+                    <div className="ml-8 text-zinc-300">name: <span className="text-amber-300">&quot;&quot;</span>,</div>
+                    <div className="ml-8 text-zinc-300">email: <span className="text-amber-300">&quot;&quot;</span>,</div>
+                    <div className="ml-8 text-zinc-300">message: <span className="text-amber-300">&quot;&quot;</span></div>
+                    <div className="ml-4 text-cyan-400">{'}'})</div>
+                    <br/>
+                    <div className="ml-4 text-cyan-400">return (</div>
+                    <div className="ml-8 text-pink-400">{'<form '}<span className="text-blue-400">className</span>=<span className="text-amber-300">&quot;space-y-4&quot;</span>{'>'}</div>
+                    <div className="ml-12 text-emerald-400">{'/* Name, email & message inputs */'}</div>
+                    <div className="ml-12 text-pink-400">{'<input '}<span className="text-blue-400">className</span>=<span className="text-amber-300">&quot;bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md&quot;</span> /{'>'}</div>
+                    <div className="ml-12 text-zinc-500">...</div>
+                    <div className="ml-12 text-pink-400">{'<button '}<span className="text-blue-400">type</span>=<span className="text-amber-300">&quot;submit&quot;</span>{'>'}</div>
+                    <div className="ml-16 text-zinc-300">Send Message</div>
+                    <div className="ml-12 text-pink-400">{'</button>'}</div>
+                    <div className="ml-8 text-pink-400">{'</form>'}</div>
+                    <div className="ml-4 text-cyan-400">)</div>
+                    <div className="text-pink-400">{'}'}</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
           </div>
         </motion.div>
       </div>

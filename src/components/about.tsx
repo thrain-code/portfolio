@@ -41,7 +41,7 @@ const Timeline: React.FC = () => {
       {timelineData.map((item, index) => (
         <div 
           key={index} 
-          className="flex flex-col transition-all duration-300 hover:bg-zinc-900/30 rounded-md p-2"
+          className="flex flex-col transition-all duration-300 hover:bg-zinc-900/30 rounded-md"
         >
           <div className="flex px-3 items-start">
             <span className="text-xl font-semibold bg-zinc-800/50 rounded-full w-8 h-8 flex items-center justify-center text-zinc-300">
@@ -139,7 +139,7 @@ const AboutStory: React.FC = () => {
               style={{ maxHeight: 'calc(70vh - 120px)' }}
             >
               <div className="space-y-3">
-                <div className="px-3 pb-3 flex items-center">
+                <div className="px-3 p-3   flex items-center">
                   <h1 className="text-xl font-semibold">Always never satisfied with your work to push you forward...</h1>
                 </div>
                 <div className="border-b border-zinc-800 w-full" />

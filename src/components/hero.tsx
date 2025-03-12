@@ -31,7 +31,7 @@ function Hero() {
           <div className="w-full lg:w-auto pr-4 lg:px-0 flex-col lg:justify-end">
             <div className="px-4">
               <p className="text-sm lg:text-md ml-20 text-zinc-600">
-                bangsat i need a job
+                please i need a job
               </p>
               <p className="lg:text-lg text-sm text-zinc-400">unemployed person</p>
             </div>

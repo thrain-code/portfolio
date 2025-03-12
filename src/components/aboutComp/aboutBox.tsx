@@ -155,8 +155,7 @@ export default function TerminalBox() {
             <span className="h-3 w-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors cursor-pointer"></span>
             <span className="h-3 w-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></span>
           </div>
-          <div className="text-zinc-400 text-xs font-mono">terminal.js</div>
-          <div className="w-16"></div>
+          <div className="text-zinc-400 text-xs font-mono">terminal.ts</div>
         </div>
 
         <div className="window-content border-x border-zinc-400">

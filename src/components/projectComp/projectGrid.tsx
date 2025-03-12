@@ -16,7 +16,7 @@ interface ProjectGridProps {
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
   return (
-    <div className="p-8 lg:p-10 bg-zinc-950">
+    <div className="p-8 lg:p-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {projects.map((project, index) => (
@@ -125,7 +125,7 @@ function ProjectCard({
             {project.tags.map((tag, idx) => (
               <span 
                 key={idx} 
-                className={`px-2 py-1 bg-zinc-800/80 text-zinc-300 text-xs font-medium rounded-full
+                className={`px-2 py-1 text-zinc-300 text-xs font-medium rounded-full
                   ${isHovered ? 'bg-zinc-700/80' : ''} transition-colors duration-300`}
               >
                 {tag}
