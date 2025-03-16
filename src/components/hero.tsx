@@ -6,7 +6,7 @@ import { FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
   {
-    href: "https://github.com/thrain-traitor",
+    href: "https://github.com/thrain-code",
     icon: (
       <FaGithub className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#6e5494]" />
     ),

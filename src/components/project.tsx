@@ -17,7 +17,7 @@ export default function Project() {
       title: "Thrain Rush",
       description: "Basic port scanner with few extra feature",
       image: port_scanner,
-      link: "https://github.com/thrain-traitor/port_scan",
+      link: "https://github.com/thrain-code/port_scan",
       tags: ["Python"],
     },
   ];
