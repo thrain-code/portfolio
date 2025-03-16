@@ -70,7 +70,6 @@ export default function Footer() {
           </button>
         </div>
 
-        {/* Animasi muncul gambar dari kiri */}
         <div
           className={`fixed top-1/2 left-0 transform -translate-y-1/2 transition-all duration-500 ${
             showImage ? "translate-x-0 opacity-100 scale-125" : "-translate-x-full opacity-0 scale-90"

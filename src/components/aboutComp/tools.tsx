@@ -7,7 +7,6 @@ import vueLogo from "@/app/assets/logo_fm/faviconVuue.ico";
 import nuxtLogo from "@/app/assets/logo_fm/faviconNuxt.ico";
 import laravelLogo from "@/app/assets/logo_fm/faviconLaravel.ico";
 import inertiaLogo from "@/app/assets/logo_fm/faviconInertia.ico";
-import springBootLogo from "@/app/assets/logo_fm/faviconSpring.png";
 import mysqlLogo from "@/app/assets/logo_fm/faviconMysql.png";
 import nextLogo from "@/app/assets/logo_fm/faviconNext.ico";
 import tailwindLogo from "@/app/assets/logo_fm/faviconTailwind.ico";
@@ -16,17 +15,16 @@ import vercelLogo from "@/app/assets/logo_fm/favicon.ico";
 import reactLogo from "@/app/assets/logo_fm/react.svg";
 
 const tools = [
-  { name: "Vue.js", img: vueLogo },
-  { name: "Nuxt 3", img: nuxtLogo },
-  { name: "Laravel", img: laravelLogo },
-  { name: "Inertia.js", img: inertiaLogo },
-  { name: "Spring Boot", img: springBootLogo },
-  { name: "MySQL", img: mysqlLogo },
-  { name: "Next.js", img: nextLogo },
-  { name: "React.js", img: reactLogo },
-  { name: "Tailwind CSS", img: tailwindLogo },
-  { name: "Axios", img: axiosLogo },
-  { name: "Vercel", img: vercelLogo },
+  { name: "Vue.js", img: vueLogo, url: "https://vuejs.org/" },
+  { name: "Nuxt 3", img: nuxtLogo, url: "https://nuxt.com/" },
+  { name: "Laravel", img: laravelLogo, url: "https://laravel.com/" },
+  { name: "Inertia.js", img: inertiaLogo, url: "https://inertiajs.com/" },
+  { name: "MySQL", img: mysqlLogo, url: "https://www.mysql.com/" },
+  { name: "Next.js", img: nextLogo, url: "https://nextjs.org/" },
+  { name: "React.js", img: reactLogo, url: "https://react.dev/" },
+  { name: "Tailwind CSS", img: tailwindLogo, url: "https://tailwindcss.com/" },
+  { name: "Axios", img: axiosLogo, url: "https://axios-http.com/" },
+  { name: "Vercel", img: vercelLogo, url: "https://vercel.com/" },
 ];
 
 export default function Tools() {
@@ -54,13 +52,16 @@ export default function Tools() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 p-6">
             {tools.map((tool, index) => (
-              <div
+              <a
                 key={index}
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`flex items-center justify-center space-x-3 p-8 bg-zinc-900 hover:bg-zinc-800 transition-colors duration-200 ${isMobile ? "grayscale-0" : "grayscale-100 hover:grayscale-0"}`}
               >
                 <Image src={tool.img} alt={tool.name} className="w-10 h-10" />
                 <span className="text-zinc-300 font-medium">{tool.name}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

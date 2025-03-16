@@ -1,27 +1,32 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import profileImage from "@/app/assets/dune.jpeg";
 import { FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
-  { 
-    href: "https://github.com/thrain-traitor", 
-    icon: <FaGithub className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#6e5494]" />,
-    name: "GitHub"
+  {
+    href: "https://github.com/thrain-traitor",
+    icon: (
+      <FaGithub className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#6e5494]" />
+    ),
+    name: "GitHub",
   },
-  { 
-    href: "https://www.instagram.com/dev_bythrain/", 
-    icon: <FaInstagram className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#E1306C]" />,
-    name: "Instagram"
+  {
+    href: "https://www.instagram.com/dev_bythrain/",
+    icon: (
+      <FaInstagram className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#E1306C]" />
+    ),
+    name: "Instagram",
   },
-  { 
-    href: "examp@gmail.com", 
-    icon: <FaEnvelope className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#EA4335]" />,
-    name: "Email"
-  }
+  {
+    href: "mailto:thrainrodent@gmail.com",
+    icon: (
+      <FaEnvelope className="text-white w-8 h-8 transition-colors duration-300 group-hover:text-[#EA4335]" />
+    ),
+    name: "Email",
+  },
 ];
-
 
 function Hero() {
   return (
@@ -33,14 +38,16 @@ function Hero() {
               <p className="text-sm lg:text-md ml-20 text-zinc-600">
                 please i need a job
               </p>
-              <p className="lg:text-lg text-sm text-zinc-400">unemployed person</p>
+              <p className="lg:text-lg text-sm text-zinc-400">
+                unemployed person
+              </p>
             </div>
             <div className="w-full lg:flex-col flex lg:w-64 lg:h-64 mx-4">
-              <div className=" border-zinc-400 border rounded-xl">
+              <div className="border-zinc-400 border rounded-xl">
                 <div className="flex items-center space-x-1 p-2 rounded-t-lg">
-                  <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
-                  <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
-                  <span className="h-3 w-3 bg-zinc-700 rounded-full"></span>
+                  <span className="h-3 w-3 bg-red-500 rounded-full" />
+                  <span className="h-3 w-3 bg-yellow-500 rounded-full" />
+                  <span className="h-3 w-3 bg-green-500 rounded-full" />
                 </div>
                 <Image
                   src={profileImage}
@@ -48,7 +55,6 @@ function Hero() {
                   className="p-1 rounded-b-xl"
                 />
               </div>
-              {/* social media link */}
               <div className="lg:py-3 px-3 w-full">
                 <div className="rounded-xl h-full w-full lg:w-auto p-3 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 justify-center items-center">
                   {socialLinks.map((link, index) => (
@@ -70,14 +76,16 @@ function Hero() {
               </div>
             </div>
           </div>
-
           <div className="h-px lg:h-full bg-zinc-800 w-full lg:w-px my-4 lg:my-0 hidden lg:block" />
-
           <div className="flex-col flex w-full lg:w-auto py-3 lg:py-0">
             <div className="border-b-1 border-b-zinc-800 w-full" />
-            <div className=" flex justify-between">
-              <p className="text-zinc-700 text-xs lg:text-lg font-light mx-2">text-5xl px-2 font-semibold tracking-tighter text-balance</p>
-              <p className="text-zinc-700 text-xs lg:text-lg font-light mx-2">Hero Components</p>
+            <div className="flex justify-between">
+              <p className="text-zinc-700 text-xs lg:text-lg font-light mx-2">
+                text-5xl px-2 font-semibold tracking-tighter text-balance
+              </p>
+              <p className="text-zinc-700 text-xs lg:text-lg font-light mx-2">
+                Hero Components
+              </p>
             </div>
             <div className="border-b-1 border-b-zinc-800 w-full" />
             <h1 className="lg:text-9xl text-white text-5xl px-2 font-semibold my-1 lg:my-4 text-left tracking-tighter text-balance">
@@ -85,7 +93,8 @@ function Hero() {
             </h1>
             <div className="border-b-1 border-b-zinc-800 w-full" />
             <p className="lg:text-2xl font-medium text-sm lg:p-4 p-2 text-zinc-600 text-left">
-              A seasoned web developer, well-versed in
+              A passionate web developer with experience in modern technologies
+              such as
               <a
                 href="https://nuxt.com/"
                 className="text-zinc-400 cursor-pointer hover:text-emerald-500"
@@ -117,24 +126,11 @@ function Hero() {
                 {" "}
                 Tailwind CSS
               </a>
-              , possessing profound mastery of the backend arts through
-              <a
-                href="https://spring.io/"
-                className="text-zinc-400 cursor-pointer hover:text-yellow-500"
-              >
-                {" "}
-                Spring Boot
-              </a>{" "}
-              and
-              <a
-                href="https://www.mysql.com/"
-                className="text-zinc-400 cursor-pointer hover:text-indigo-500"
-              >
-                {" "}
-                MySQL
-              </a>
-              . He doth favor efficiency, a vision of futurity, and solutions
-              most pristine and unburdened by needless complexity.
+              . Experienced in building scalable applications, optimizing
+              performance, and creating clean, maintainable code. With a keen
+              eye for design and functionality, I strive to deliver seamless
+              user experiences while continuously exploring new technologies and
+              innovations.
             </p>
           </div>
         </div>

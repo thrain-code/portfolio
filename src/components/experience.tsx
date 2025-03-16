@@ -1,5 +1,5 @@
 "use client";
-import Title from "@/components/titleComp/title"
+import Title from "@/components/titleComp/title";
 import { FaGraduationCap } from "react-icons/fa";
 import Image, { StaticImageData } from "next/image";
 import gambarMasterMedia from "@/app/assets/logo_fm/faviconmastermedia.ico";
@@ -37,13 +37,13 @@ export default function Experience() {
           <ExperienceCard
             image={gambarMasterMedia}
             title="Master Media"
-            description="During my internship at Master Media Cirebon, I mastered the art of assembling custom PCs, active panels, and videotrons. I toiled in warehouse loading, crafted laptops and AIO monitors, and ensured flawless monitor performance—all with skill and unwavering diligence."
+            description="During my internship at Master Media Cirebon, I gained hands-on experience in assembling custom PCs, active panels, and videotrons. I also worked in warehouse operations, assembled laptops and all-in-one monitors, and conducted monitor performance tests to ensure quality and reliability."
           />
           <div className="h-px lg:h-full bg-zinc-800 w-full lg:w-px lg:my-0" />
           <ExperienceCard
             image={gambarBpr}
             title="BPR Cahaya Fajar"
-            description="During mine apprenticeship at BPR Cahaya Fajar, I didst craft a form of petition for noble patrons, wrought with Vue and Tailwind. Likewise, I didst forge the company&apos;s databases with Laravel 11, weaving structure and order with steadfast hand."
+            description="At BPR Cahaya Fajar, I developed a customer request form using Vue and Tailwind CSS, streamlining user interactions. Additionally, I designed and managed the company’s databases with Laravel 11, ensuring efficient data storage and organization."
           />
         </div>
       </div>

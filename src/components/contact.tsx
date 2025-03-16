@@ -28,11 +28,9 @@ export default function ContactComp() {
     message: string;
   } | null>(null);
   
-  // Animation control
   const [animationReady, setAnimationReady] = useState(false);
   
   useEffect(() => {
-    // Trigger animation after component mounts
     setAnimationReady(true);
   }, []);
 
@@ -50,7 +48,6 @@ export default function ContactComp() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus({
@@ -58,14 +55,12 @@ export default function ContactComp() {
         message: "Your message has been sent. I'll get back to you soon!"
       });
       
-      // Reset form
       setFormData({
         name: "",
         email: "",
         message: ""
       });
       
-      // Clear status after 3 seconds
       setTimeout(() => setSubmitStatus(null), 3000);
     }, 1000);
   };
@@ -87,7 +82,6 @@ export default function ContactComp() {
         >
           <div className="flex lg:flex-row flex-col-reverse justify-center gap-4 p-4 lg:p-6">
             
-            {/* Contact Form with Animation */}
             <motion.div 
               className="bg-zinc-900/30 w-full backdrop-blur-sm rounded-lg border border-zinc-800 p-6 shadow-lg"
               initial={{ opacity: 0, y: 100 }}
@@ -95,13 +89,12 @@ export default function ContactComp() {
               transition={{ 
                 duration: 0.7, 
                 ease: [0.22, 1, 0.36, 1],
-                delay: 0.3 // Slightly delayed from the code box
+                delay: 0.3
               }}
             >
               <h3 className="text-xl font-medium text-zinc-200 mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name Input with Animation */}
                 <motion.div 
                   className="space-y-1"
                   initial={{ opacity: 0, y: 20 }}
@@ -130,7 +123,6 @@ export default function ContactComp() {
                   </div>
                 </motion.div>
                 
-                {/* Email Input with Animation */}
                 <motion.div 
                   className="space-y-1"
                   initial={{ opacity: 0, y: 20 }}
@@ -159,7 +151,6 @@ export default function ContactComp() {
                   </div>
                 </motion.div>
                 
-                {/* Message Textarea with Animation */}
                 <motion.div 
                   className="space-y-1"
                   initial={{ opacity: 0, y: 20 }}
@@ -184,7 +175,6 @@ export default function ContactComp() {
                   ></textarea>
                 </motion.div>
                 
-                {/* Submit Button with Animation */}
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
@@ -216,7 +206,6 @@ export default function ContactComp() {
                   </span>
                 </motion.button>
                 
-                {/* Status Message with Animation */}
                 {submitStatus && (
                   <motion.div 
                     className={`mt-4 p-3 rounded-md text-sm ${
@@ -235,14 +224,13 @@ export default function ContactComp() {
               </form>
             </motion.div>
 
-            {/* Simple Code Box with Animation */}
             <motion.div 
               className="bg-zinc-900/30 rounded-lg border border-zinc-800 overflow-hidden shadow-lg"
               initial={{ opacity: 0, y: 100 }}
               animate={animationReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
               transition={{ 
                 duration: 0.7, 
-                ease: [0.22, 1, 0.36, 1], // Custom easing for smooth motion
+                ease: [0.22, 1, 0.36, 1],
                 delay: 0.1
               }}
             >
@@ -281,7 +269,6 @@ export default function ContactComp() {
                 </div>
               </div>
             </motion.div>
-            
           </div>
         </motion.div>
       </div>
