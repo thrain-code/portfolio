@@ -9,7 +9,7 @@ export default function TerminalBox() {
   
   const fullText = `const thrain: Developer = {
     name: "Arkadani Fathir Fahrezi",
-    skills: ["TypeScript", "Vue.js", "Nuxt 3", "Tailwind CSS", "Laravel", "Spring Boot"],
+    skills: ["TypeScript", "Vue.js", "Nuxt 3", "Tailwind CSS", "Laravel"],
     passion: "Crafting futuristic and interactive web experiences",
     projects: ["Portfolio", "Admin Dashboard", "E-commerce", "Learning System Management"],
   };
