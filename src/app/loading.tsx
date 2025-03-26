@@ -1,7 +1,7 @@
 export default function loading() {
   return(
     <>
-    banmgsat
+    tunggu sebentar my friend
     </>
   )
 }
