@@ -3,6 +3,7 @@ import { FaProjectDiagram } from "react-icons/fa";
 import ProjectGrid from "../components/projectComp/projectGrid";
 import portfolio from "@/app/assets/portfolio.png";
 import port_scanner from "@/app/assets/port_scanner.png"
+import threat_detection from "@/app/assets/threat_detection.png"
 
 export default function Project() {
   const projects = [
@@ -18,6 +19,13 @@ export default function Project() {
       description: "Basic port scanner with few extra feature",
       image: port_scanner,
       link: "https://github.com/thrain-code/port_scan",
+      tags: ["Python"],
+    },
+    {
+      title: "Threat Detection",
+      description: "Camera that can see threat by detecting any object",
+      image: threat_detection,
+      link: "https://github.com/thrain-code/threat-detection",
       tags: ["Python"],
     },
   ];
