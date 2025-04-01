@@ -44,7 +44,7 @@ const Timeline: React.FC = () => {
           className="flex flex-col transition-all duration-300 hover:bg-zinc-900/30 rounded-md"
         >
           <div className="flex px-3 items-start">
-            <span className="text-xl font-semibold bg-zinc-800/50 rounded-full w-8 h-8 flex items-center justify-center text-zinc-300">
+            <span className="text-xl font-semibold w-8 h-8 flex items-center justify-center text-zinc-300">
               {item.step}
             </span>
             <p className="text-zinc-600 px-3 pb-3 text-sm lg:text-lg font-light text-justify">
